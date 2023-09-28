@@ -1,0 +1,85 @@
+
+
+/* Login.css */
+
+.form {
+    margin: 10rem 0;
+}
+#main_box {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo_box {
+    text-align: center;
+}
+
+.logo_img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+.input_box {
+    margin-top: 10px;
+
+}
+
+.input_box input[type="email"],
+.input_box input[type="password"] {
+    margin-left: 2rem;
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input_box input[type="button"] {
+    width: 80%;
+    margin-left: 2rem;
+    padding: 10px;
+    background-color: #7900ff;
+    color: white;
+    border: 1px solid #7900ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.openApi_box {
+    margin-left: 2rem;
+    margin-top: 10px;
+}
+
+/* Style for Kakao login button */
+.openApi_box .btn-kakao {
+    background-color: #F7E600;
+    color: black;
+    border: 1px solid #F7E600;
+}
+
+/* Style for Naver login button */
+.openApi_box .btn-naver {
+    background-color: #2DB400;
+    color: black;
+    border: 1px solid #F7E600;
+}
+
+/* Style for the "회원가입" link */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: #7900ff;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
