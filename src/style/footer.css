@@ -1,0 +1,41 @@
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.info_icon_box {
+    text-align: center;
+    padding: 20px;
+}
+
+.info_box_top {
+    margin-bottom: 20px;
+}
+
+.footer_link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-menu {
+    background-color: #333;
+}
+
+.dropdown-item {
+    color: #fff !important;
+}
+
+.info_box div {
+    margin-bottom: 10px;
+}
+
+.last {
+    font-size: 0.8rem;
+}

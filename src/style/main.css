@@ -1,0 +1,170 @@
+/* Reset some default styles for consistency */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and set font styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Add a container to center the content and add padding for left and right spacing */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 0; /* 좌우 20px의 패딩을 제거하고 상하 패딩만 남깁니다. */
+
+}
+
+/* Style the movie container */
+.movie-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* 좌우 패딩을 40px로 늘립니다. */
+    margin: 20px 0;
+    width: 300px;
+    height: 500px;
+}
+
+/* Style the movie poster */
+.movie-container img {
+    max-width: 100%;
+    height: 300px !important;
+    border-radius: 5px;
+}
+
+/* Style the movie info section */
+.movie-info {
+    margin-top: 10px;
+}
+
+/* Style movie title */
+.movie-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style the next poster button */
+.movie-info button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Style the next poster button on hover */
+.movie-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Create a grid layout for movies */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개의 컬럼 */
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+/* Style individual movie containers */
+.movie-container {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Style movie poster */
+.movie-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+/* Style movie info section */
+.movie-info {
+    margin-top: 10px;
+}
+
+/* Style movie title */
+.movie-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Style the next poster button */
+.movie-info button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Style the next poster button on hover */
+.movie-info button:hover {
+    background-color: #0056b3;
+}
+
+.imgLogo {
+    width: 5vw;
+    height: 10vh;
+}
+
+.imgLogoMain {
+    width: 20vw;
+    height: 10vh;
+    position: absolute;
+    right: 55rem;
+}
+
+/* 공통 스타일 */
+.logIn,
+.signUp {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* 로그인 버튼 스타일 */
+.logIn {
+    background-color: #7900FF;
+    position: absolute;
+    right: 15rem;
+    top: 2rem;
+    width: 10vw;
+    height: 5vh;
+}
+
+/* 회원가입 버튼 스타일 */
+.signUp {
+    background-color: #7900FF;
+    position: absolute;
+    right: 30rem;
+    top: 2rem;
+    width: 10vw;
+    height: 5vh;
+}
+
+/* 버튼 호버 효과 */
+.logIn:hover,
+.signUp:hover {
+    background-color: #0056b3; /* 버튼 호버 시 배경 색 변경 */
+}
+
+
