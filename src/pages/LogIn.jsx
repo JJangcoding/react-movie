@@ -1,97 +1,82 @@
-import React from 'react';
-import imgLogo from '../images/logo.png'
-import "../style/login.css"
-function LogIn() {
-    const handleLogin = () => {
-        // Implement your login logic here
-        // You can access the email and password input values using React state or refs
-        // Example: const email = emailRef.current.value;
-        //          const password = passwordRef.current.value;
-    };
+import React, { useRef, useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import imgLogoMain from '../images/logo_main.png';
+import '../style/login.css';
 
-    const handleKakaoLogin = () => {
-        // Implement your Kakao login logic here
-    };
+function LogIn({ handleLogin }) {
+    const email = useRef();
+    const password = useRef();
 
-    const handleNaverLogin = () => {
-        // Implement your Naver login logic here
+    const [show, setShow] = useState(false);
+    const [showHome, setShowHome] = useState(false);
+    const localEmail = localStorage.getItem('email');
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localEmail) {
+            setShow(true);
+        }
+    }, []);
+
+    const handleLoginFormSubmit = () => {
+        const enteredEmail = email.current.value;
+        const enteredPassword = password.current.value;
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
+
+        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+            alert('로그인 성공!');
+            handleLogin();
+            navigate('/');
+        } else {
+            alert('로그인 실패. 올바른 이메일과 비밀번호를 입력하세요.');
+        }
     };
 
     return (
-        <form className="form">
-            <div id="main_box">
-                <div className="logo_box input-group mb-2">
-                    <img
-                        className="logo_img"
-                    src={imgLogo} className="imgLogo" alt="Logo" />
-
+        <div>
+            <main />
+            <form className="form">
+                <div id="main_box">
+                    <div className="logo_box input-group mb-2">
+                        <img className="logo_img" src={imgLogoMain} alt="로고" />
+                    </div>
+                    <div className="input_box input-group mb-2" id="email_box">
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="이메일"
+                            className="form-control"
+                            id="email"
+                            ref={email}
+                        />
+                    </div>
+                    <div className="input_box input-group mb-2" id="pwd_box">
+                        <input
+                            type="password"
+                            name="pwd"
+                            placeholder="비밀번호"
+                            className="form-control"
+                            id="pwd"
+                            ref={password}
+                        />
+                    </div>
+                    <div className="input_box input-group mb-2">
+                        <input
+                            type="button"
+                            value="로그인"
+                            className="btn btn-outline-danger su"
+                            id="login_btn"
+                            onClick={handleLoginFormSubmit}
+                        />
+                    </div>
+                    <div className="link_box input-group mb-2" id="link_box">
+                        아직 계정이 없으신가요? <Link to="/signup">회원가입</Link>
+                    </div>
                 </div>
-                <div className="input_box input-group mb-2" id="email_box">
-                    <input
-                        type="email"
-                        name="email"
-                        className="form-control"
-                        placeholder="이메일"
-                    />
-                </div>
-                <div className="input_box input-group mb-2" id="pwd_box">
-                    <input
-                        type="password"
-                        name="pwd"
-                        className="form-control"
-                        placeholder="비밀번호"
-                    />
-                </div>
-                <div className="input_box input-group mb-2">
-                    <input
-                        type="button"
-                        name="button"
-                        style={{
-                            backgroundColor: '#7900ff',
-                            color: 'white',
-                            borderColor: '#7900ff',
-                        }}
-                        value="로그인"
-                        className="btn btn-outline-danger"
-                        onClick={handleLogin}
-                    />
-                </div>
-                <div className="openApi_box input-group mb-2">
-                    <input
-                        type="button"
-                        name="button"
-                        style={{
-                            backgroundColor: '#F7E600',
-                            color: 'black',
-                            borderColor: '#F7E600',
-                        }}
-                        value="카카오 간편로그인"
-                        className="btn btn-outline-danger"
-                        onClick={handleKakaoLogin}
-                    />
-                </div>
-
-                <div className="openApi_box input-group mb-2">
-                    <input
-                        type="button"
-                        name="button"
-                        style={{
-                            backgroundColor: '#2DB400',
-                            color: 'black',
-                            borderColor: '#F7E600',
-                        }}
-                        value="네이버 간편로그인"
-                        className="btn btn-outline-danger"
-                        onClick={handleNaverLogin}
-                    />
-                </div>
-
-                {/* Uncomment the following lines if you want to display the "회원가입" link */}
-                {/*<div>
-          계정이 없으신가요? <a href="movie_mate_signUp_screen.do">회원가입</a>
-        </div>*/}
-            </div>
-        </form>
+            </form>
+        </div>
     );
 }
 
